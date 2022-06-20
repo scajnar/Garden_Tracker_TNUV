@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 
@@ -21,10 +24,11 @@ import java.util.List;
 import si.uni_lj.fe.tnuv.wtot2_garden_f.adapters.PlantListaAdapter;
 import si.uni_lj.fe.tnuv.wtot2_garden_f.model.PlantModel;
 // 28:50
-public class MainActivity extends AppCompatActivity implements PlantListaAdapter.PlantListClickListener {
+public class MainActivity extends AppCompatActivity implements PlantListaAdapter.PlantListClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,6 +39,17 @@ public class MainActivity extends AppCompatActivity implements PlantListaAdapter
         List<PlantModel> plantModelList = getPlantData();
 
         initRecyclerView(plantModelList);
+        Button callInputPlant;
+
+        callInputPlant = findViewById(R.id.go_to_input_plant);
+
+        callInputPlant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, InputPlantActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
