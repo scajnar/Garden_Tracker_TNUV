@@ -1,7 +1,8 @@
 {
   "project_info": {
     "project_number": "186362283708",
-    "project_id": "gardentracker-155b6",
+    "firebase_url": "https://gardentracker-155b6-default-rtdb.europe-west1.firebasedatabase.app/",
+    "project_id" : "gardentracker-155b6",
     "storage_bucket": "gardentracker-155b6.appspot.com"
   },
   "client": [
