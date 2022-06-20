@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "186362283708",
+    "project_id": "gardentracker-155b6",
+    "storage_bucket": "gardentracker-155b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186362283708:android:0bfc0234a678e35366f2b9",
+        "android_client_info": {
+          "package_name": "si.uni_lj.fe.tnuv.wtot2_garden_f"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186362283708-3mfptiosvopnhmrcsdkkahtv5r755jvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Q3Bw3UUi-pA5Ddj1bGNjTxXeygdX-yU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186362283708-3mfptiosvopnhmrcsdkkahtv5r755jvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
