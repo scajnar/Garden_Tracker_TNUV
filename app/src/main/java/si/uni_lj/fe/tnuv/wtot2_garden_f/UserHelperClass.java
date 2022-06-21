@@ -3,11 +3,11 @@ package si.uni_lj.fe.tnuv.wtot2_garden_f;
 public class UserHelperClass {
 
     String name, room;
-    Integer watering;
+    String watering;
     public UserHelperClass(){
 
     }
-    public UserHelperClass(String name, String room, Integer watering) {
+    public UserHelperClass(String name, String room, String watering) {
         this.name = name;
         this.room = room;
         this.watering = watering;
@@ -29,11 +29,11 @@ public class UserHelperClass {
         this.room = room;
     }
 
-    public Integer getWatering() {
+    public String getWatering() {
         return watering;
     }
 
-    public void setWatering(Integer watering) {
+    public void setWatering(String watering) {
         this.watering = watering;
     }
 }

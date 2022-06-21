@@ -40,11 +40,14 @@ public class InputPlantActivity extends AppCompatActivity {
 
                 String _name = name.getEditText().getText().toString();
                 String _room = room.getEditText().getText().toString();
-                Integer _watering = Integer.parseInt(watering.getEditText().getText().toString());
+                String _watering = watering.getEditText().getText().toString();
+                //Integer _watering = Integer.parseInt(watering.getEditText().getText().toString());
                 UserHelperClass helperClass = new UserHelperClass(_name, _room, _watering);
 
                 reference.child(_name+ UUID.randomUUID().toString()).setValue(helperClass);
-
+                Intent intent = new Intent(InputPlantActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
