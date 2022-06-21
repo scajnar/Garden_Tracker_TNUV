@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/go_to_input_plant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Add a new plant"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerView"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -15,5 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingBottom="20dp"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
