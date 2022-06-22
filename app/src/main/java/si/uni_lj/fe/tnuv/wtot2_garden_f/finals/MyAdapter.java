@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import si.uni_lj.fe.tnuv.wtot2_garden_f.R;
 
@@ -38,6 +39,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.room.setText(plant.getRoom());
         holder.watering.setText(plant.getWatering());
 
+        Calendar calendar = Calendar.getInstance();
+        Integer today = calendar.get(Calendar.DAY_OF_YEAR);
+        Integer int_last_watered = Integer.parseInt(plant.getLast_watering());
+        String str_last_watered = String.valueOf(today-int_last_watered);
+        holder.last_watered.setText(str_last_watered);
+
     }
 
     @Override
@@ -46,12 +53,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView name, room, watering;
+        TextView name, room, watering, last_watered;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tvPlantName);
             room = itemView.findViewById(R.id.tvPlantRoom);
             watering = itemView.findViewById(R.id.tvWatering);
+            last_watered = itemView.findViewById(R.id.tvLastWatered);
         }
     }
 }

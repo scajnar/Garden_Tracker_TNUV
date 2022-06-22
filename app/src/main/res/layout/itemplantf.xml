@@ -67,13 +67,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Watering days: "
+                android:text="Water every days"
                 android:textColor="@color/black"
                 android:textSize="26dp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/tvWatering"
-                android:text="356"
+                android:text="5"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="26dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last watered days ago"
+                android:textColor="@color/black"
+                android:textSize="26dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvLastWatered"
+                android:text="3"
                 android:layout_marginLeft="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
