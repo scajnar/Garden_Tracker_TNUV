@@ -38,12 +38,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.name.setText(plant.getName());
         holder.room.setText(plant.getRoom());
         holder.watering.setText(plant.getWatering());
-
+        System.out.println("Pred calendar");
         Calendar calendar = Calendar.getInstance();
+        System.out.println("Po calendar");
         Integer today = calendar.get(Calendar.DAY_OF_YEAR);
+        System.out.println("Po today");
+        System.out.println("po po today");
+        System.out.println("get last watering je "+ plant.getLast_watering());
+
+        System.out.printf("Today je %s ,   getLast_watering() je %s", today, plant.getLast_watering());
         Integer int_last_watered = Integer.parseInt(plant.getLast_watering());
+        System.out.println("Po int last watered");
         String str_last_watered = String.valueOf(today-int_last_watered);
+        System.out.println("Po str last watered");
         holder.last_watered.setText(str_last_watered);
+        System.out.println("Po holder last watered");
 
     }
 

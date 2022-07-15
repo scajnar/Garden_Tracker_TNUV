@@ -46,6 +46,7 @@ public class InputPlantActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 Integer dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
                 String _last_watering = String.valueOf(dayOfYear);
+                System.out.println("_last_watering je "+_last_watering);
                 UserHelperClass helperClass = new UserHelperClass(_name, _room, _watering, _last_watering);
 
                 reference.child(_name+ UUID.randomUUID().toString()).setValue(helperClass);

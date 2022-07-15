@@ -7,13 +7,6 @@ public class UserHelperClass {
     String last_watering;
 
 
-    public String getLast_watering() {
-        return last_watering;
-    }
-
-    public void setLast_watering(String last_watering) {
-        this.last_watering = last_watering;
-    }
     public UserHelperClass(){
 
     }
@@ -21,6 +14,13 @@ public class UserHelperClass {
         this.name = name;
         this.room = room;
         this.watering = watering;
+        this.last_watering = last_watering;
+    }
+    public String getLast_watering() {
+        return last_watering;
+    }
+
+    public void setLast_watering(String last_watering) {
         this.last_watering = last_watering;
     }
 
