@@ -1,7 +1,6 @@
 package si.uni_lj.fe.tnuv.wtot2_garden_f;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,22 +15,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import si.uni_lj.fe.tnuv.wtot2_garden_f.adapters.PlantListaAdapter;
 import si.uni_lj.fe.tnuv.wtot2_garden_f.finals.MyAdapter;
 import si.uni_lj.fe.tnuv.wtot2_garden_f.finals.Plant;
-import si.uni_lj.fe.tnuv.wtot2_garden_f.model.PlantModel;
+
 // 28:50
 public class MainActivity extends AppCompatActivity{
 
@@ -39,6 +28,7 @@ public class MainActivity extends AppCompatActivity{
     DatabaseReference database;
     MyAdapter myAdapter;
     ArrayList<Plant> list;
+    ArrayList<String> list_idjev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +39,7 @@ public class MainActivity extends AppCompatActivity{
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
+        list_idjev = new ArrayList<>();
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
@@ -59,8 +50,9 @@ public class MainActivity extends AppCompatActivity{
 
                     Plant plant = dataSnapshot.getValue(Plant.class);
                     list.add(plant);
+                    list_idjev.add(plant.getId());
+                    System.out.println("Plant id je "+ plant.getId());
                 }
-
                 myAdapter.notifyDataSetChanged();
             }
 

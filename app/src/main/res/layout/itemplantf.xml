@@ -103,7 +103,11 @@
                 android:textSize="26dp"/>
         </LinearLayout>
 
-
+        <Button
+            android:id="@+id/WaterIt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Water it!" />
 
 
     </LinearLayout>

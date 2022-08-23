@@ -3,6 +3,7 @@ package si.uni_lj.fe.tnuv.wtot2_garden_f.finals;
 public class Plant {
     String name, room, watering;
     String last_watering;
+    String id;
 
     public String getLast_watering() {
         /*Calendar calendar = Calendar.getInstance();
@@ -11,6 +12,8 @@ public class Plant {
         last_watered = String.valueOf(dayOfYear - int_last_watered);*/
         return last_watering;
     }
+
+    public String getId() { return id; }
 
     public String getName() {
         return name;
