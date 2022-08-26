@@ -88,8 +88,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             }
         });
-
-
     }
 
     @Override
@@ -108,9 +106,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             last_watered = itemView.findViewById(R.id.tvLastWatered);
             button_plant_id = itemView.findViewById(R.id.WaterIt);
         }
-
     }
-
-
-
 }
