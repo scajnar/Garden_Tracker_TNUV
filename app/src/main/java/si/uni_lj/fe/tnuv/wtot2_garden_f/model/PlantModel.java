@@ -10,10 +10,13 @@ public class PlantModel implements Parcelable {
     private String name;
     private String address;
     private String image;
+    private String id;
     // to del
     private float delivery_charge;
     private Hours hours;
     private List<Menu> menus;
+
+    public String getId() { return id; }
 
     public String getName() {
         return name;

@@ -1,14 +1,11 @@
-package si.uni_lj.fe.tnuv.wtot2_garden_f;
+package si.uni_lj.fe.tnuv.wtot2_garden_f.finals;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,18 +14,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-import si.uni_lj.fe.tnuv.wtot2_garden_f.finals.MyAdapter;
-import si.uni_lj.fe.tnuv.wtot2_garden_f.finals.Plant;
+import si.uni_lj.fe.tnuv.wtot2_garden_f.R;
 
-// 28:50
-public class MainActivity extends AppCompatActivity{
+public class plantList extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference database;
     MyAdapter myAdapter;
     ArrayList<Plant> list;
-    ArrayList<String> list_idjev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +33,8 @@ public class MainActivity extends AppCompatActivity{
         database = FirebaseDatabase.getInstance().getReference("Plants");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         list = new ArrayList<>();
-        list_idjev = new ArrayList<>();
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
@@ -50,9 +45,8 @@ public class MainActivity extends AppCompatActivity{
 
                     Plant plant = dataSnapshot.getValue(Plant.class);
                     list.add(plant);
-                    list_idjev.add(plant.getId());
-                    System.out.println("Plant id je "+ plant.getId());
                 }
+
                 myAdapter.notifyDataSetChanged();
             }
 
@@ -61,16 +55,6 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
-        Button callInputPlant;
-        callInputPlant = findViewById(R.id.go_to_input_plant);
-        callInputPlant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, InputPlantActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
-
 }

@@ -11,6 +11,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.Random;
 import java.util.UUID;
 
@@ -40,11 +41,19 @@ public class InputPlantActivity extends AppCompatActivity {
 
                 String _name = name.getEditText().getText().toString();
                 String _room = room.getEditText().getText().toString();
-                Integer _watering = Integer.parseInt(watering.getEditText().getText().toString());
-                UserHelperClass helperClass = new UserHelperClass(_name, _room, _watering);
+                String _watering = watering.getEditText().getText().toString();
+                //Integer _watering =
+                Calendar calendar = Calendar.getInstance();
+                Integer dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
+                String _last_watering = String.valueOf(dayOfYear);
+                System.out.println("_last_watering je "+_last_watering);
+                String id = UUID.randomUUID().toString();
+                UserHelperClass helperClass = new UserHelperClass(_name, _room, _watering, _last_watering, id);
 
-                reference.child(_name+ UUID.randomUUID().toString()).setValue(helperClass);
-
+                reference.child(_name+ id).setValue(helperClass);
+                Intent intent = new Intent(InputPlantActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
