@@ -60,12 +60,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         System.out.printf("Today je %s ,   getLast_watering() je %s", today, plant.getLast_watering());
 
         Integer int_last_watered = Integer.parseInt(plant.getLast_watering());
+        Integer int_watering = Integer.parseInt(plant.getWatering());
         System.out.println("Po int last watered");
 
         String str_last_watered = String.valueOf(today-int_last_watered);
         System.out.println("Po str last watered");
+        Integer int_last_watering = Integer.parseInt(str_last_watered);
+        if (int_last_watering > int_watering){
+            holder.last_watered.setText("Needs water!");
+        }else{
+            holder.last_watered.setText(str_last_watered);
+        }
 
-        holder.last_watered.setText(str_last_watered);
         System.out.println("Po holder last watered");
 
         holder.button_plant_id.setTag(position);
