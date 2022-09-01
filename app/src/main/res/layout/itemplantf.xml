@@ -8,9 +8,9 @@
     android:layout_margin="16dp">
 
     <LinearLayout
-        android:layout_width="343dp"
+        android:layout_width="311dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="60dp"
         android:orientation="vertical">
 
 
@@ -24,10 +24,11 @@
                 android:id="@+id/tvPlantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="0dp"
                 android:text="first name"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -40,9 +41,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Located in "
+                android:text="In "
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvPlantRoom"
@@ -51,7 +52,7 @@
                 android:layout_marginLeft="0dp"
                 android:text="plant room"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="italic" />
         </LinearLayout>
 
@@ -103,13 +104,19 @@
 
         <Button
             android:id="@+id/WaterIt"
-            android:layout_width="186dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Water it!" />
 
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/deleteIt"
+        android:layout_width="45dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="3dp"
+        android:text="X" />
 
 
 </androidx.cardview.widget.CardView>

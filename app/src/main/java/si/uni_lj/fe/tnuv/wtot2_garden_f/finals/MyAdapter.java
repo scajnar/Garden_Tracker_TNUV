@@ -94,6 +94,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             }
         });
+
+        holder.delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = (int) holder.button_plant_id.getTag();
+                FirebaseDatabase rootNode;
+                DatabaseReference reference;
+                String plant_name = list.get(position).getName();
+                String plant_id = list.get(position).getId();
+                ArrayList<Plant> duplicate_list = list;
+                list.clear();
+                System.out.println("Attempting to delete" +  plant_name +plant_id);
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("Plants");
+                reference.child(plant_name+plant_id).removeValue();
+                duplicate_list.remove(plant_id);
+                list.addAll(duplicate_list);
+
+            }
+        });
     }
 
     @Override
@@ -104,6 +124,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView name, room, watering, last_watered;
         Button button_plant_id;
+        Button delete_button;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tvPlantName);
@@ -111,6 +132,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             watering = itemView.findViewById(R.id.tvWatering);
             last_watered = itemView.findViewById(R.id.tvLastWatered);
             button_plant_id = itemView.findViewById(R.id.WaterIt);
+            delete_button = itemView.findViewById(R.id.deleteIt);
         }
     }
 }
